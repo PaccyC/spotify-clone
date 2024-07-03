@@ -45,7 +45,7 @@ export const resetPassword = createAsyncThunk(
     async ({token,newPassword},{rejectWithValue})=>{
  
         try {
-            const response= await axios.post(baseUrl+'/auth/password-reset',{token,newPassword})
+            const response= await axios.post(baseUrl+'/auth/reset-password',{token,newPassword})
             return response.data;
         } catch (error) {
             return rejectWithValue(error.response.data)
