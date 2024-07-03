@@ -110,7 +110,7 @@ export class AuthService {
     await this.mailerService.sendMail({
      to:email,
      subject:'Reset Password',
-     template:'./reset-passwrd',
+     template:'reset-password',
      context:{
       name:user.username,
       url,

@@ -54,13 +54,13 @@ import {HandlebarsAdapter} from '@nestjs-modules/mailer/dist/adapters/handlebars
   defaults:{
     from:`Spotify Clone Support <${process.env.FROM_EMAIL}>`
   },
-  // template:{
-  //   dir:join(__dirname,'templates'),
-  //   adapter: new HandlebarsAdapter(),
-  //   options:{
-  //     strict:true
-  //   }
-  // }
+  template:{
+    dir:'src/templates',
+    adapter: new HandlebarsAdapter(),
+    options:{
+      strict:true
+    }
+  }
  })
  
   ]

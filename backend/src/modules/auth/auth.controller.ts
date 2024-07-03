@@ -24,14 +24,17 @@ export class AuthController {
     async requestPasswordReset(
       @Body('email') email:string 
     ){
-      return this.authService.sendPasswordResetEmail(email)
-    }
+
+  await this.authService.sendPasswordResetEmail(email);
+    return { message: 'Password reset email sent' };
+      }
 
     @Post("/reset-password")
     async resetPassword(
      @Query('token') token:string,
      @Body('newPassword') newPassword:string
     ){
-      return this.authService.resetPassword(token,newPassword)
+      await this.authService.resetPassword(token, newPassword);
+    return { message: 'Password has been reset' };
     }
 }
