@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { loginUser } from "./authSlice";
-
+import {Link} from 'react-router-dom'
 const Login = () => {
     const[formData,setFormData]=useState({
         email:"",

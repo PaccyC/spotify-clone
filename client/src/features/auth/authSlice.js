@@ -1,11 +1,13 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from 'axios'
 
+
+const baseUrl='http://localhost:3001'
 export const registerUser =createAsyncThunk(
     'auth/registerUser',
     async(userData,{rejectWithValue})=>{
         try {
-            const response= await axios.post('/auth/signup',userData)
+            const response= await axios.post(baseUrl+'/auth/signup',userData)
             return response.data;
         } catch (error) {
              return rejectWithValue(error.response.data)
@@ -18,7 +20,7 @@ export const loginUser = createAsyncThunk(
     async (userData,{rejectWithValue})=>{
         try {
             
-            const response= await axios.post('/auth/signin',userData)
+            const response= await axios.post(baseUrl+'/auth/authenticate',userData)
             return response.data;
         } catch (error) {
             return rejectWithValue(error.response.data)
@@ -30,7 +32,7 @@ export const requestPasswordReset = createAsyncThunk(
     'auth/requestPasswordReset',
     async (email,{rejectWithValue})=>{
         try {
-            const response= await axios.post('/auth/request-password-reset',{email})
+            const response= await axios.post(baseUrl+'/auth/request-password-reset',{email})
             return response.data;
         } catch (error) {
             return rejectWithValue(error.response.data)
@@ -43,7 +45,7 @@ export const resetPassword = createAsyncThunk(
     async ({token,newPassword},{rejectWithValue})=>{
  
         try {
-            const response= await axios.post('/auth/password-reset',{token,newPassword})
+            const response= await axios.post(baseUrl+'/auth/password-reset',{token,newPassword})
             return response.data;
         } catch (error) {
             return rejectWithValue(error.response.data)
