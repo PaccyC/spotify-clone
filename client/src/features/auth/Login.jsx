@@ -33,6 +33,8 @@ const Login = () => {
         onChange={onChange} />
       <button type="submit">Login</button>
       {error && <p>{error.message}</p>}
+
+      <Link to="/request-reset">Forgot Password?</Link>
     </form>
   )
 }
