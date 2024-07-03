@@ -96,7 +96,7 @@ export class AuthService {
   async sendPasswordResetEmail(email:string){
     const user = await this.prisma.user.findUnique({
       where:{
-        email
+        email:email
       }
     });
 
