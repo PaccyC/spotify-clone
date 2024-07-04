@@ -122,6 +122,12 @@ export class AuthService {
   // resetting a password
 
   async resetPassword(token:string,newPassword:string){
+
+
+    
+    if (!token) {
+      throw new Error('Token must be provided');
+    }
     const decoded= this.jwt.verify(token);
     const email= decoded.email;
      

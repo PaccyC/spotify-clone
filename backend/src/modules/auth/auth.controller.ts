@@ -29,12 +29,11 @@ export class AuthController {
     return { message: 'Password reset email sent' };
       }
 
-    @Post("/reset-password")
-    async resetPassword(
-     @Query('token') token:string,
-     @Body('newPassword') newPassword:string
-    ){
-      await this.authService.resetPassword(token, newPassword);
-    return { message: 'Password has been reset' };
-    }
+      @Post('/reset-password')
+      async resetPassword(@Body() body: { token: string; newPassword: string }) {
+        console.log('Received reset-password request:', body); // Debugging line
+        const { token, newPassword } = body;
+        await this.authService.resetPassword(token, newPassword);
+        return { message: 'Password has been reset' };
+      }
 }
