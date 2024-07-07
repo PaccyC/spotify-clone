@@ -82,6 +82,19 @@ const Register = () => {
              <img src="google-icon.png" alt="Google" className="w-6 h-6 mr-2" />
              Sign up with Google
           </button>
+          <button className="w-full py-2 px-4 bg-gray-900 text-white rounded-md flex items-center justify-center hover:bg-gray-800">
+            <img src="facebook-icon.png" alt="Facebook" className="w-6 h-6 mr-2" />
+            Sign up with Facebook
+          </button>
+          <button className=" w-full py-2 px-4 bg-gray-900 text-white rounded-md flex items-center justify-center">
+            <img  src="facebook-icon.png" alt="Apple" className="w-6 h-6 mr-2" />
+            Sign up with Apple
+          </button>
+        </div>
+        <div className="mt-6 text-center text-gray-400">
+          <p>
+            Already have an account? <a href="/login" className="text-green-500 hover:underline">Log in here.</a>
+          </p>
         </div>
         </div>
    </div>
