@@ -3,6 +3,10 @@ import { useState } from "react"
 import { useDispatch,useSelector } from 'react-redux'
 import { registerUser } from "./authSlice";
 import { useNavigate } from "react-router-dom";
+
+import { FaApple } from "react-icons/fa";
+import googleIcon from '../../assets/images/google.png';
+import facebookIcon from '../../assets/images/facebook.png';
 const Register = () => {
     const [formData,setFormData]= useState({
         email:'',
@@ -72,22 +76,24 @@ const Register = () => {
           {error && error.message}   
         </form>
         <div className=" mt-6  text-center text-gray-400">
+          <hr/>
           <p>or</p>
-
+         <hr/>
         </div>
-        <div className=" mt-4 space-y-2">
+        <div className=" mt-4 space-y-3 w-full justify-center">
           <button 
-          className="w-full py-2 px-4 bg-gray-900 text-white rounded-md flex items-center justify-center hover:bg-gray-800"
+          className="w-full py-2 px-4 bg-gray-900 text-white rounded-md flex items-center hover:bg-gray-800"
           >
-             <img src="google-icon.png" alt="Google" className="w-6 h-6 mr-2" />
+             <img src={googleIcon} alt="Google" className="w-6 h-6 mr-2 rounded-full bg-gray-900" />
              Sign up with Google
           </button>
-          <button className="w-full py-2 px-4 bg-gray-900 text-white rounded-md flex items-center justify-center hover:bg-gray-800">
-            <img src="facebook-icon.png" alt="Facebook" className="w-6 h-6 mr-2" />
+          <button className="w-full py-2 px-4 bg-gray-900 text-white rounded-md flex items-center  hover:bg-gray-800">
+            <img src={facebookIcon} alt="Facebook" className="w-6 h-6 mr-2 rounded-full" />
+            
             Sign up with Facebook
           </button>
-          <button className=" w-full py-2 px-4 bg-gray-900 text-white rounded-md flex items-center justify-center">
-            <img  src="facebook-icon.png" alt="Apple" className="w-6 h-6 mr-2" />
+          <button className=" w-full py-2 px-4 bg-gray-900 text-white rounded-md flex items-center  ">
+            <FaApple className="w-6 h-6 mr-2" />
             Sign up with Apple
           </button>
         </div>
