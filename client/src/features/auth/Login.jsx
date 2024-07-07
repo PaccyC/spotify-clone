@@ -20,6 +20,8 @@ const Login = () => {
       dipatch(loginUser(formData))
     }
       return (
+        <div className=" bg-black">
+
     <form onSubmit={onSubmit}>
       <input 
         type="email" 
@@ -36,6 +38,7 @@ const Login = () => {
 
       <Link to="/request-reset">Forgot Password?</Link>
     </form>
+        </div>
   )
 }
 
