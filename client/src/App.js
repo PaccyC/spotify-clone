@@ -4,18 +4,12 @@ import Home from './pages/Home';
 import Register from './features/auth/Register';
 import PasswordResetRequest from './features/auth/PasswordResetRequest';
 import ResetPassword from './features/auth/ResetPassword';
-import PrivateRoute from './components/PrivateRoute';
 
 const router = createBrowserRouter(
   createRoutesFromElements([
-    <Route 
-      path="/" 
-      element={
-        <PrivateRoute>
-          <Home />
-        </PrivateRoute>
-      } 
-    />,
+   
+    <Route path="/" element={<Home />} />,
+
     <Route path="/auth/reset-password" element={<ResetPassword />} />,
     <Route path="/login" element={<Login />} />,
     <Route path="/register" element={<Register />} />,
