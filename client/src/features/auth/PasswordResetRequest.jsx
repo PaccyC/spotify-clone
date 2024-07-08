@@ -14,6 +14,7 @@ const PasswordResetRequest = () => {
         dispatch(requestPasswordReset({email}))
     }
   return (
+    <div className=" min-h-screen bg-black">
     <form onSubmit={handleSubmit}>
       <input 
         type="email"
@@ -23,10 +24,11 @@ const PasswordResetRequest = () => {
         placeholder="Enter your email address"
 
        />
-       <button type="submit">Request Password Reset</button>
+       <button type="submit">Send Link</button>
        {error && <p>{error.message}</p>}
        {message && <p>{message}</p>}
     </form>
+    </div>
   )
 }
 
