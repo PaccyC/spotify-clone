@@ -39,8 +39,8 @@ const ResetPassword = () => {
 <label className=' block text-white text-sm font-semibold mb-2'>New Password</label>
 <input
   type="password"
-  value={newPassword}
-  onChange={(e) => setNewPassword(e.target.value)}
+  // value={newPassword}
+  // onChange={(e) => setNewPassword(e.target.value)}
   required
   className=" bg-black p-4 border-white w-full text-white border mb-4"
 />
